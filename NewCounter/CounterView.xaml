@@ -1,0 +1,13 @@
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewCounter.CounterView">
+    <StackLayout Padding="5">
+        <Entry Placeholder="Nazwa licznika" x:Name="CounterName" />
+        <Label x:Name="CounterLabel" Text="0" FontSize="Large" HorizontalOptions="Center" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="+" Clicked="OnIncrementButtonClicked" />
+            <Button Text="-" Clicked="OnDecrementButtonClicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentView>

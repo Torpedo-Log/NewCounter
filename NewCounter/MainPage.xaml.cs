@@ -1,6 +1,3 @@
-﻿
-using Microsoft.Maui.Storage;
-
 namespace NewCounter
 {
     public partial class MainPage : ContentPage
@@ -13,7 +10,6 @@ namespace NewCounter
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
 
             int counterCount = Preferences.Get("CounterCount", 0);
             for (int i = 0; i < counterCount; i++)
@@ -42,9 +38,23 @@ namespace NewCounter
 
         private void OnAddCounterButtonClicked(object sender, EventArgs e)
         {
+            int btnValue = 0;
 
-            var counterView = new CounterView();
-            CounterList.Children.Add(counterView);
+            if (BtnValue.Text == "")
+            {
+                return;
+            }
+
+            if (int.TryParse(BtnValue.Text, out btnValue))
+            {
+                var counterView = new CounterView();
+                counterView.SetCounterValue(btnValue);
+                CounterList.Children.Add(counterView);
+            }
+
         }
+
+
+
     }
 }

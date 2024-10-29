@@ -1,18 +1,13 @@
-
 namespace NewCounter
 {
     public partial class CounterView : ContentView
     {
         private int counter = 0;
+        private Editor btnValue;
 
         public CounterView()
         {
             InitializeComponent();
-        }
-
-        public void SetCounterName(string name)
-        {
-            CounterName.Text = name;
         }
 
         public string GetCounterName()
@@ -20,15 +15,20 @@ namespace NewCounter
             return CounterName.Text;
         }
 
-        public void SetCounterValue(int value)
+        public void SetCounterName(string name)
         {
-            counter = value;
-            CounterLabel.Text = counter.ToString();
+            CounterName.Text = name;
         }
 
         public int GetCounterValue()
         {
             return counter;
+        }
+
+        public void SetCounterValue(int value)
+        {
+            counter = value;
+            CounterLabel.Text = counter.ToString();
         }
 
         private void OnIncrementButtonClicked(object sender, EventArgs e)
